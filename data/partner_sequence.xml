@@ -1,0 +1,9 @@
+<odoo>
+    <record id="seq_res_partner_client" model="ir.sequence">
+        <field name="name">Client Number</field>
+        <field name="code">res.partner.client</field>
+        <field name="prefix">CUST</field>
+        <field name="padding">5</field>
+        <field name="number_increment">1</field>
+    </record>
+</odoo>
