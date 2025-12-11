@@ -15,7 +15,7 @@ Long description of module's purpose
     "depends": ["base"],
     # always loaded
     "data": [
-        # 'security/ir.model.access.csv',
+        "security/ir.model.access.csv",
         "data/partner_sequence.xml",
         "views/res_partner_views.xml",
         "views/views.xml",

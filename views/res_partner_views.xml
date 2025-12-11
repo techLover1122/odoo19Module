@@ -5,25 +5,37 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
 
-            <!-- Add client number before the name -->
-            <field name="name" position="before">
+            <!-- Add client number before name -->
+            <xpath expr="//field[@name='name']" position="before">
                 <field name="client_number"/>
-            </field>
+            </xpath>
 
-            <!-- Add new tab for Installed Products -->
-            <notebook position="inside">
-                <page string="Installed Products">
-                    <field name="product_line_ids">
-                        <form>
-                            <group>
-                                <field name="product_name"/>
-                                <field name="place"/>
-                                <field name="zone_number"/>
-                            </group>
-                        </form>
-                    </field>
-                </page>
-            </notebook>
+            <!-- Add button in header -->
+            <xpath expr="//form" position="inside">
+                <header>
+                    <button name="download_installed_products_xlsx"
+                            type="object"
+                            string="Download Installed Products XLSX"
+                            class="btn-primary"/>
+                </header>
+            </xpath>
+
+            <!-- Add tab for installed products -->
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="Installed Products">
+                        <field name="product_line_ids">
+                            <form string="Installed Product">
+                                <group>
+                                    <field name="product_name"/>
+                                    <field name="place"/>
+                                    <field name="zone_number"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
 
         </field>
     </record>
